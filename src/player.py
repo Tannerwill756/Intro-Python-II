@@ -10,22 +10,6 @@ class Player:
         return f"<Welcome, {self.name}! You're in the {self.current_room} room>"
 
 
-def input_f():
-    return input("Would you like to go north, south, east or west? ")
-
-
-def outside(room, user):
-    result = input_f()
-    result.lower()
-    if result[0] == "n":
-        player = Player(user, "foyer")
-        print(f"You have now entered the {player.current_room} Room")
-
-    else:
-        print("You can only go north out of this room.")
-        outside(room, user)
-
-
 """
 room['outside'].n_to = room['foyer']
 room['foyer'].s_to = room['outside']

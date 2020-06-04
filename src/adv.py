@@ -36,6 +36,7 @@ room['narrow'].w_to = room['foyer']
 room['narrow'].n_to = room['treasure']
 room['treasure'].s_to = room['narrow']
 
+# print(room["outside"].n_to.description)
 #
 # Main
 #
@@ -55,13 +56,32 @@ room['treasure'].s_to = room['narrow']
 
 
 def main():
+    logged_in: False
+
     username = input("Please provide a name for your character: ")
-
     print(Player(username))
+    logged_in: True
 
-    if Player(username).current_room == "outside":
-        outside("outside", username)
-    # if Player(user.name).current
+    while logged_in == True:
+        if Player(username).current_room == "outside":
+            outside("outside", username)
+        # if Player(user.name).current
 
 
 main()
+
+
+def input_f():
+    return input("Would you like to go north, south, east or west? ")
+
+
+def outside(room, user):
+    result = input_f()
+    result.lower()
+    if result[0] == "n":
+        player = Player(user, "foyer")
+        print(f"You have now entered the {player.current_room} Room")
+        main()
+    else:
+        print("You can only go north out of this room.")
+        outside(room, user)
