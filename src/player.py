@@ -2,13 +2,22 @@
 # currently.
 
 class Player:
-    def __init__(self, name, current_room, logged_in=False):
+    def __init__(self, name, current_room):
         self.name = name
         self.current_room = current_room
-        self.logged_in = logged_in
 
     def __str__(self):
         return f"<Welcome, {self.name}! You're in the {self.current_room} room>"
+
+    def change_room(self, dir, location):
+        move = dir + '_to'
+
+        if hasattr(location, move):
+            return getattr(location, move)
+
+        print("\n uh oh can't go that way \n")
+
+        return location
 
 
 """

@@ -58,12 +58,16 @@ while not completed:
     print(player.current_room.description + "\n")
 
     direction = input(
-        "Select [N] for north, [S] for south, [E] for east, or [W] for west.").lower()
+        "Select [N] for north, [S] for south, [E] for east, or [W] for west: ").lower()
 
-    if direction in ['n', 's', 'e', 'w']
-
-    completed = True
-
+    if direction in ['n', 's', 'e', 'w']:
+        player.current_room = player.change_room(
+            direction, player.current_room)
+        continue
+    elif direction in ['q', 'quit']:
+        completed = True
+    else:
+        print("\n Invalid command \n")
 # def outside_room():
 #     if player.current_room == "outside":
 #         print("You're currently located: " + room["outside"].name + "!")
