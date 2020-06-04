@@ -2,9 +2,10 @@
 # currently.
 
 class Player:
-    def __init__(self, name, current_room="outside"):
+    def __init__(self, name, current_room="outside", logged_in=False):
         self.name = name
         self.current_room = current_room
+        self.logged_in = logged_in
 
     def __str__(self):
         return f"<Welcome, {self.name}! You're in the {self.current_room} room>"
