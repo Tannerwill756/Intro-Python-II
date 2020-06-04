@@ -47,40 +47,54 @@ def input_f():
 
 
 username = input("Please provide a name for your character: ")
-player = Player(username, logged_in=False)
+player = Player(username, room['outside'])
+
+completed = False
+
+while not completed:
+
+    print("\n"+player.current_room.name+"\n")
+
+    print(player.current_room.description + "\n")
+
+    direction = input(
+        "Select [N] for north, [S] for south, [E] for east, or [W] for west.").lower()
+
+    if direction in ['n', 's', 'e', 'w']
+
+    completed = True
+
+# def outside_room():
+#     if player.current_room == "outside":
+#         print("You're currently located: " + room["outside"].name + "!")
+#         print(room["outside"].description)
+#         direction = input_f().lower()
+#         if direction[0] == "n":
+#             player.current_room = "foyer"
+#             print("You move to the " + player.current_room)
+#             foyer_room()
+#         else:
+#             print("uh oh ")
+#     else:
+#         print("uh oh ")
 
 
-def outside_room():
-    if player.current_room == "outside":
-        print("You're currently located: " + room["outside"].name + "!")
-        print(room["outside"].description)
-        direction = input_f().lower()
-        if direction[0] == "n":
-            player.current_room = "foyer"
-            print("You move to the " + player.current_room)
-            foyer_room()
-        else:
-            print("uh oh ")
-    else:
-        print("uh oh ")
+# def foyer_room():
+#     if player.current_room == "foyer":
+#         print("Your character has arrived to the room: " +
+#               room["foyer"].name + "!")
+#         print(room["foyer"].description)
+#     else:
+#         print("uh oh ")
 
 
-def foyer_room():
-    if player.current_room == "foyer":
-        print("Your character has arrived to the room: " +
-              room["foyer"].name + "!")
-        print(room["foyer"].description)
-    else:
-        print("uh oh ")
+# def intro():
+#     print(f"Welcome {username}, let the adventure begin.")
+#     player.logged_in = True
+#     if player.logged_in == True:
+#         outside_room()
+#     else:
+#         print("uh oh ")
 
 
-def intro():
-    print(f"Welcome {username}, let the adventure begin.")
-    player.logged_in = True
-    if player.logged_in == True:
-        outside_room()
-    else:
-        print("uh oh ")
-
-
-intro()
+# intro()

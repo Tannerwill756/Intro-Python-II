@@ -2,7 +2,7 @@
 # currently.
 
 class Player:
-    def __init__(self, name, current_room="outside", logged_in=False):
+    def __init__(self, name, current_room, logged_in=False):
         self.name = name
         self.current_room = current_room
         self.logged_in = logged_in
